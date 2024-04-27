@@ -1,0 +1,24 @@
+{
+  "originHash" : "6431dae0144bdff64119d1f3c34b8c06ff42c3026dfe1885cccc9279fff4cae8",
+  "pins" : [
+    {
+      "identity" : "netfox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kasketis/netfox.git",
+      "state" : {
+        "revision" : "557576032736fd3140422baefb68b8f76c55088f",
+        "version" : "1.21.0"
+      }
+    },
+    {
+      "identity" : "progresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/relatedcode/ProgressHUD.git",
+      "state" : {
+        "revision" : "fd18c75d5f650a949e1da5fc725a1c1b523bbf8e",
+        "version" : "14.1.1"
+      }
+    }
+  ],
+  "version" : 3
+}
