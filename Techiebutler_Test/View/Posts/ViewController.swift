@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     
     func setUpView() {
+        tableView.prefetchDataSource = self
         self.navigationItem.title = "Posts(\(postsList.count))"
     }
     
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -61,6 +62,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? PostsTableViewCell else {
             return UITableViewCell()
         }
+        self.postsList[indexPath.row].startTime = Date()
         cell.configureCell(data: postsList[indexPath.row])
         return cell
     }
@@ -87,6 +89,37 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
+            
+            GCDHelper.mainQueue.async { [weak self] in
+                guard let self  = self else { return }
+                if let cell = cell as? PostsTableViewCell {
+                    if let date = self.postsList[indexPath.row].startTime {
+                        let elapsed = Date().timeIntervalSince(date)
+                        cell.timeLabel.text = "\(String(format: "%.3f", elapsed)) sec"
+                    }
+                }
+            }
+        }
+        
+    }
+    
+//    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        print("Did Display \(indexPath.row)")
+//        GCDHelper.mainQueue.async { [weak self] in
+//            guard let self  = self else { return }
+//            if let cell = cell as? PostsTableViewCell {
+//                if let date = self.postsList[indexPath.row].startTime {
+//                    let elapsed = Date().timeIntervalSince(date)
+//                    cell.timeLabel.text = "\(elapsed) seconds"
+//                }
+//            }
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+        for index in indexPaths {
+            postsList[index.row].startTime = Date()
         }
         
     }

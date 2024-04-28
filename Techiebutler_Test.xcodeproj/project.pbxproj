@@ -25,7 +25,6 @@
 		BD8DA97F2BDBE414009E4684 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DA97E2BDBE414009E4684 /* PostsTableViewCell.swift */; };
 		BD8DA9812BDBE915009E4684 /* PostCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DA9802BDBE915009E4684 /* PostCommentsTableViewCell.swift */; };
 		BD8DA9832BDBE93C009E4684 /* PostCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DA9822BDBE93C009E4684 /* PostCommentsViewController.swift */; };
-		BD8DA9862BDBEEB9009E4684 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = BD8DA9852BDBEEB9009E4684 /* netfox */; };
 		BD8DA9882BDBFBA7009E4684 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DA9872BDBFBA7009E4684 /* HeaderTableViewCell.swift */; };
 		BD8DA98A2BDC017A009E4684 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8DA9892BDC017A009E4684 /* Common.swift */; };
 		BD8DA98D2BDC02C2009E4684 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = BD8DA98C2BDC02C2009E4684 /* ProgressHUD */; };
@@ -61,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD8DA9862BDBEEB9009E4684 /* netfox in Frameworks */,
 				BD8DA98D2BDC02C2009E4684 /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,19 +88,13 @@
 			children = (
 				BD8DA9542BDBDA8E009E4684 /* AppDelegate.swift */,
 				BD8DA9562BDBDA8E009E4684 /* SceneDelegate.swift */,
-				BD8DA9792BDBDB42009E4684 /* Models */,
 				BD8DA96B2BDBDAD8009E4684 /* Network */,
+				BD8DA9792BDBDB42009E4684 /* Models */,
+				BD8DA98E2BDD0D61009E4684 /* View */,
 				BD8DA9742BDBDAFB009E4684 /* Extensions */,
+				BDF9D1DE2BDD0DD1004090E6 /* Resources */,
 				BD8DA9702BDBDAFB009E4684 /* Utils */,
-				BD8DA9582BDBDA8E009E4684 /* ViewController.swift */,
-				BD8DA95A2BDBDA8E009E4684 /* Main.storyboard */,
-				BD8DA95D2BDBDA90009E4684 /* Assets.xcassets */,
-				BD8DA95F2BDBDA90009E4684 /* LaunchScreen.storyboard */,
 				BD8DA9622BDBDA90009E4684 /* Info.plist */,
-				BD8DA97E2BDBE414009E4684 /* PostsTableViewCell.swift */,
-				BD8DA9802BDBE915009E4684 /* PostCommentsTableViewCell.swift */,
-				BD8DA9822BDBE93C009E4684 /* PostCommentsViewController.swift */,
-				BD8DA9872BDBFBA7009E4684 /* HeaderTableViewCell.swift */,
 			);
 			path = Techiebutler_Test;
 			sourceTree = "<group>";
@@ -145,6 +137,52 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BD8DA98E2BDD0D61009E4684 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDF9D1DD2BDD0DB6004090E6 /* Cells */,
+				BD8DA9902BDD0D74009E4684 /* Details */,
+				BD8DA98F2BDD0D6B009E4684 /* Posts */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD8DA98F2BDD0D6B009E4684 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DA9582BDBDA8E009E4684 /* ViewController.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		BD8DA9902BDD0D74009E4684 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DA9822BDBE93C009E4684 /* PostCommentsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		BDF9D1DD2BDD0DB6004090E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DA97E2BDBE414009E4684 /* PostsTableViewCell.swift */,
+				BD8DA9802BDBE915009E4684 /* PostCommentsTableViewCell.swift */,
+				BD8DA9872BDBFBA7009E4684 /* HeaderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BDF9D1DE2BDD0DD1004090E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD8DA95A2BDBDA8E009E4684 /* Main.storyboard */,
+				BD8DA95D2BDBDA90009E4684 /* Assets.xcassets */,
+				BD8DA95F2BDBDA90009E4684 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,7 +200,6 @@
 			);
 			name = Techiebutler_Test;
 			packageProductDependencies = (
-				BD8DA9852BDBEEB9009E4684 /* netfox */,
 				BD8DA98C2BDC02C2009E4684 /* ProgressHUD */,
 			);
 			productName = Techiebutler_Test;
@@ -194,7 +231,6 @@
 			);
 			mainGroup = BD8DA9482BDBDA8E009E4684;
 			packageReferences = (
-				BD8DA9842BDBEEB9009E4684 /* XCRemoteSwiftPackageReference "netfox" */,
 				BD8DA98B2BDC02C2009E4684 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = BD8DA9522BDBDA8E009E4684 /* Products */;
@@ -465,14 +501,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BD8DA9842BDBEEB9009E4684 /* XCRemoteSwiftPackageReference "netfox" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kasketis/netfox.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.21.0;
-			};
-		};
 		BD8DA98B2BDC02C2009E4684 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
@@ -484,11 +512,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BD8DA9852BDBEEB9009E4684 /* netfox */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BD8DA9842BDBEEB9009E4684 /* XCRemoteSwiftPackageReference "netfox" */;
-			productName = netfox;
-		};
 		BD8DA98C2BDC02C2009E4684 /* ProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BD8DA98B2BDC02C2009E4684 /* XCRemoteSwiftPackageReference "ProgressHUD" */;

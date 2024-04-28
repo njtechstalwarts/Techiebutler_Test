@@ -13,6 +13,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var userIdLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -26,7 +27,6 @@ class PostsTableViewCell: UITableViewCell {
         postLabel.text = data.body
         idLabel.text = "\(data.id ?? 0)"
         userIdLabel.text = "\(data.userId ?? 0)"
-        
     }
 
 }

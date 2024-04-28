@@ -12,6 +12,7 @@ struct GetPostsResponse: Codable {
     let id : Int?
     let title : String?
     let body : String?
+    var startTime: Date? = nil
 
     enum CodingKeys: String, CodingKey {
 
